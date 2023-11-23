@@ -141,14 +141,14 @@ include_once('layouts/header.php');
             <div class="form-group">
               <label for="buying-price">Buying Price</label>
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                <span class="input-group-addon"><i class="glyphicon"><b>  &#8377;  </b></i></span>
                 <input type="number" class="form-control" name="buying-price" value="<?php echo remove_junk($product['buy_price']); ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="saleing-price">Selling Price</label>
               <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                <span class="input-group-addon"><i class="glyphicon"><b>&#8377;</b></i></span>
                 <input type="number" class="form-control" name="saleing-price" value="<?php echo remove_junk($product['sale_price']); ?>">
               </div>
             </div>

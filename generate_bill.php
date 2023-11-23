@@ -18,7 +18,21 @@ if (isset($_GET['id'])) {
         $sale = $result->fetch_assoc();
         $stmt->close();
         
-        $bill_content = generate_bill($sale_id);
+        // Calculate tax amounts
+        $cgst_rate = 9; // CGST rate
+        $sgst_rate = 9; // SGST rate
+        $cgst_amount = ($sale['price'] * $cgst_rate / 100) * $sale['qty'];
+        $sgst_amount = ($sale['price'] * $sgst_rate / 100) * $sale['qty'];
+        $total_with_tax = $sale['price'] * $sale['qty'] + $cgst_amount + $sgst_amount;
+
+        
+
+// ... (your existing code)
+
+$date = $sale['date'];
+$bill_content = generate_bill($sale_id, $sale, $cgst_amount, $sgst_amount, $total_with_tax, $date);
+
+// ... (your existing code)
 
         if ($bill_content) {
             include('invoice_template.php');
