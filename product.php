@@ -108,8 +108,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <tr>
                                 <td class="text-center">
                                     <?php echo count_id(); ?>
-                                    <?php if ($product['quantity'] < 15) : ?>
-                                        <span class="label label-warning">Low Stock</span>
+                                    <?php if ($product['quantity'] < 20) : ?>
+
+
+<span class="badge" style="background-color: darkorange; color: white;">Low Stock</span>
                                     <?php endif; ?>
                                 </td>
                                 <td>
